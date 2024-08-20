@@ -1,5 +1,20 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { datadogRum } from '@datadog/browser-rum';
+
+datadogRum.init({
+    applicationId: '1bc81573-b368-4c0f-af3d-29442b7c4ab2',
+    clientToken: 'pub7c4d17b8fe7e4372733881b74561e1b7',
+    site: 'datadoghq.com',
+    service: 'react-login-form',
+    env: 'staging',
+    sessionSampleRate: 100,
+    sessionReplaySampleRate: 20,
+    trackUserInteractions: true,
+    trackResources: true,
+    trackLongTasks: true,
+    defaultPrivacyLevel: 'mask-user-input',
+});
 
 function App() {
     const initialValues = {
